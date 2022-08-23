@@ -32,13 +32,13 @@ public class assignment2 {
 		Eatable lambdaEatable = () -> System.out.println("Mmmm yummy food");
 		eatFood(lambdaEatable);
 		
-		List<String> names = new ArrayList<String>();
-		names.add("Bob");
-		names.add("John");
-		names.add("Joy");
+		List<ZonedDateTime> times = new ArrayList<ZonedDateTime>();
+		times.add(laTime);
+		times.add(parisTime);
+		times.add(koreaTime);
 		
-		long count = names.stream().filter(str->str.length()<4).count();
-		System.out.println(count + " names with less than 4 characters");
+		long count = times.stream().filter(ZonedDateTime->ZonedDateTime.getHour()>=12).count();
+		System.out.println(count + " cities living in the afternoon!");
 	}
 	
 	static void eatFood(Eatable food) {
