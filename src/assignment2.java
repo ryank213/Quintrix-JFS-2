@@ -37,8 +37,10 @@ public class assignment2 {
 		times.add(parisTime);
 		times.add(koreaTime);
 		
+		System.out.println();
 		long count = times.stream().filter(ZonedDateTime->ZonedDateTime.getHour()>=12).count();
 		System.out.println(count + " cities living in the afternoon!");
+		times.stream().map(ZonedDateTime->ZonedDateTime.getZone()).forEach(System.out::println);
 	}
 	
 	static void eatFood(Eatable food) {
